@@ -36,7 +36,7 @@ export async function presence(prevState: any, formData: FormData) {
         // const presenceRes = await res.json()
         // console.log(presenceRes)
         // return {message: presenceRes.message}
-      }
+      // }
       return revalidatePath('/')
     } catch (error: any) {
       console.log(error)
