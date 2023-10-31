@@ -37,7 +37,7 @@ export default function Home() {
       //     redirect: 'follow'
       //   })
       //   const json = await res.json()
-      }
+      // }
       return revalidatePath('/')
     } catch (error) {
       return {message: "gagal"}
