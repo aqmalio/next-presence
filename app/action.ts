@@ -2,7 +2,7 @@
 import { revalidatePath } from "@/node_modules/next/cache"
 
 export async function presence(prevState: any, formData: FormData) {
-  'use server'
+    'use server'
     try {
       const res = await fetch(`${process.env.PRESENCE_API_BASEURL}check_area?pegawai_id=${process.env.PRESENCE_NIP}&latitude=${formData.get('latitude')}&longitude=${formData.get('longitude')}`, {
         cache: 'no-store',
@@ -33,9 +33,9 @@ export async function presence(prevState: any, formData: FormData) {
       //     },
       //     redirect: 'follow'
       //   })
-        // const presenceRes = await res.json()
-        // console.log(presenceRes)
-        // return {message: presenceRes.message}
+      //   const presenceRes = await res.json()
+      //   console.log(presenceRes)
+      //   return {message: presenceRes.message}
       // }
       return revalidatePath('/')
     } catch (error: any) {
