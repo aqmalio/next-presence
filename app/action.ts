@@ -41,6 +41,6 @@ export async function presence(prevState: any, formData: FormData) {
       return revalidatePath('/')
     } catch (error: any) {
       console.log(error)
-      return {message: error.message}
+      return error.message
     }
   }
