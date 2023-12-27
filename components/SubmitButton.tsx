@@ -1,7 +1,7 @@
 'use client'
 import { Button } from "@/components/ui/button"
 
-const SubmitButton = (props) => {
+const SubmitButton = (props: any) => {
   console.log(props)
   return (
     <>
