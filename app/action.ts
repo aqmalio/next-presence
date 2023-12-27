@@ -17,9 +17,9 @@ export async function presence(prevState: any, formData: FormData) {
         },
         redirect: 'follow'
       })
-      const json = await res.json()
-      console.log(json)
-      // if (json.success) {
+      const checkAreaRes = await res.json()
+      console.log(checkAreaRes)
+      // if (checkAreaRes.success) {
       //   const res = await fetch(`${process.env.PRESENCE_API_BASEURL}tap_presensi?pegawai_id=${process.env.PRESENCE_NIP}&latitude=${formData.get('latitude')}&longitude=${formData.get('longitude')}&input_type=2&alamat=${process.env.PRESENCE_ALAMAT}&versi=2&imei=${process.env.PRESENCE_IMEI}&from=1`, {
       //     cache: 'no-store',
       //     method: 'POST',
@@ -35,8 +35,9 @@ export async function presence(prevState: any, formData: FormData) {
       //   })
       //   const presenceRes = await res.json()
       //   console.log(presenceRes)
-      //   return {message: presenceRes.message}
+      //   return presenceRes
       // }
+      return checkAreaRes.message
       return revalidatePath('/')
     } catch (error: any) {
       console.log(error)

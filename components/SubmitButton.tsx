@@ -1,17 +1,14 @@
 'use client'
 import { Button } from "@/components/ui/button"
-import { experimental_useFormStatus as useFormStatus } from 'react-dom'
 
-const SubmitButton = () => {
-
-  const { pending } = useFormStatus()
-
+const SubmitButton = (props) => {
+  console.log(props)
   return (
     <>
       <Button
         className="center"
         type="submit"
-        aria-disabled={pending}
+        disabled={props.disabled}
       >Presence!</Button>
     </>
   )
